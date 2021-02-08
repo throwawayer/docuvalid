@@ -1,0 +1,79 @@
+.documents
+  @extend .documents-layout
+
+  &-header
+    display block
+    margin 0 0 24px 0
+
+    &__item
+      display inline-block
+      vertical-align middle
+
+      &--with-margin
+        margin-right 12px
+
+  &-contentheader
+    display flex
+    flex-direction row
+    padding 4px 4px 4px 0
+    justify-content space-between
+
+    &__item
+      display inline-flex
+      flex-basis 19%
+
+    &--error
+      display block
+      padding 0
+
+    &--error &
+      &__item
+        display block
+        flex-basis 0
+        margin 0 0 16px
+
+        &:last-child
+          margin 0
+
+
+  &-content
+    &-body
+      display flex
+      flex-direction row
+      padding 4px 4px 4px 0
+      justify-content space-between
+
+    &-body
+      &__item
+        display inline-flex
+        flex-basis 19%
+
+    &-body
+      &__item
+        padding 8px
+        align-self center
+        background-color $gray-2
+        border-right 1px solid $gray-1
+        border-left 1px solid $gray-1
+
+        &--last
+          padding 8px 0
+          margin 0
+          align-items center
+          justify-content space-between
+          border none
+          background-color transparent
+
+      &--error
+        display flex
+        flex-direction column
+        padding 12px 0 0 0
+
+      &--error &
+        &__item
+          display inline-block
+          margin 0
+          padding 0
+          align-self auto
+          background-color transparent
+          border none

@@ -1,0 +1,84 @@
+.btn
+  display inline-block
+  position relative
+  vertical-align middle
+  height 28px
+  width 120px
+  padding 0 16px
+  background-color $blue-dark
+  color $white
+  font-size 14px
+  border-radius 2px
+  border-width 0 0 2px
+  border-color $blue
+  text-align center
+  text-decoration none !important
+  cursor pointer
+  user-select none
+  box-shadow none
+  white-space nowrap
+  text-overflow ellipsis
+  transition 200ms
+
+  &::after
+    content ""
+    display inline-block
+    vertical-align middle
+    height 100%
+
+  &:hover
+    background-color $blue
+    border-color $blue
+
+  &:active
+    background-color $blue-dark
+    border-color $blue-dark
+
+  &:disabled
+    background-color alpha($blue-dark, .3)
+    border-color alpha($blue, .3)
+    cursor not-allowed
+
+  &--secondary
+    background-color $white
+    color $blue-dark
+    border-width 2px
+    border-color $blue-dark
+
+    &:hover
+      border-color $blue
+      color $white
+
+    &:active
+      border-color $blue-dark
+      color $white
+
+    &:disabled
+      border-width 0 0 2px
+      border-color alpha($blue-dark, .3)
+
+  &--abort
+    background-color $red
+    border-width 0 0 2px
+    border-color $red-dark
+
+    &:hover
+      background-color $red-light
+      border-color $red-dark
+
+    &:active
+      background-color $red-dark
+      border-color $red-dark
+
+    &:disabled
+      background-color alpha($red, .3)
+      border-color alpha($red-dark, .3)
+
+  &--with-margin
+    margin-right 8px
+
+  &__text
+    display inline
+    vertical-align middle
+    position relative
+

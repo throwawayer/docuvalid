@@ -1,0 +1,37 @@
+.page-container
+  display block
+  padding 16px $page-container-horizontal-padding
+
+  &-header
+    display inline-block
+    vertical-align middle
+    width 100%
+    text-align center
+
+  &-body
+    display block
+    padding 32px 0 0 0
+
+    &-header
+      display inline-block
+      width 100%
+      max-width $factual-left-col-width
+      margin 0
+      margin-right 'calc(%s - %s)' % ($nominal-left-col-width $factual-left-col-width)
+      text-align justify
+
+      &__text
+        font-size 20px
+        line-height 28px
+
+    &__content
+      display inline-block
+      vertical-align top
+      width 'calc(100vw - (%s + (%s * 2) + 18px))' % ($nominal-left-col-width $page-container-horizontal-padding)
+
+.documents-layout
+  padding 24px
+  margin 0 auto
+  background-color $white
+  border-radius 25px
+  box-shadow 0 5px 25px 0 alpha($black-1, .1)

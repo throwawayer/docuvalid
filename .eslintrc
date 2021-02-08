@@ -1,0 +1,58 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:testing-library/react"
+  ],
+  "parserOptions": {
+    "allowImportExportEverywhere": false,
+    "ecmaVersion": 11,
+    "ecmaFeatures": { "jsx": true, "globalReturn": false },
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "plugins": ["react-hooks", "testing-library", "jest-dom"],
+  "rules": {
+    "@typescript-eslint/restrict-template-expressions": ["error", { "allowNullish": true }],
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": { "consistent": true, "minProperties": 0 }
+      }
+    ],
+    "operator-linebreak": ["error", "before", { "overrides": { "=": "after" } }],
+    "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore",
+        "exceptions": ["button"]
+      }
+    ],
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"],
+        "paths": ["./src/**/*"]
+      },
+      "babel-module": {}
+    }
+  }
+}
