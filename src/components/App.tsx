@@ -9,15 +9,14 @@ const App = ({ children }: AppProps): JSX.Element => (
     </header>
     <article className="page-container-body">
       <header className="page-container-body-header">
-        <h2>Hello</h2>
+        <h2 className="page-container-body-header__title">Hello</h2>
         <p className="page-container-body-header__text">
-          The following application gets a list of documents from a remote server and use that
-          remote server to check the validity of those documents.
-          <br />
-          <br />
-          The last column in the table contains a button that allows a user to validate a document.
-          The result of validation is shown via status circles, which show the progress in standard
-          way:
+          The following application gets a list of documents from a remote server and use that remote server to check
+          the validity of those documents.
+        </p>
+        <p className="page-container-body-header__text">
+          The last column in the table contains a button that allows a user to validate a document. The result of
+          validation is shown via status circles, which show the progress in standard way:
         </p>
         <ul className="page-container-body-header__text">
           <li>
