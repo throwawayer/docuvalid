@@ -15,7 +15,11 @@ npm start
 ```
 npm run build
 ```
-4. Test the project via ReactTestingLibrary:
+4. Run the project in production mode:
+```
+npm run prod
+```
+5. Test the project via ReactTestingLibrary:
 ```
 npm run test
 ```
@@ -25,3 +29,7 @@ Will start webpack development server on ```localhost:3000``` with [hot module r
 # Environment variables
 
 - ```NODE_ENV``` - Either "development" or "production".
+
+# Live demo
+
+- [Demo](https://throwawayer.github.io/life/) - link to the demo.

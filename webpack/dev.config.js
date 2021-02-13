@@ -10,6 +10,9 @@ const config = {
     historyApiFallback: true,
     port: 3000,
   },
+  output: {
+    publicPath: '/',
+  },
   module: {
     rules: [
       {

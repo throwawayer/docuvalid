@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -17,15 +16,22 @@ const config = {
     port: 9000,
   },
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
+    publicPath: './',
   },
   optimization: {
     minimize: true,
-    runtimeChunk: 'single',
+    moduleIds: 'deterministic',
+    chunkIds: 'deterministic',
+    mangleWasmImports: true,
+    mergeDuplicateChunks: true,
+    innerGraph: true,
+    realContentHash: true,
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: Infinity,
-      minSize: 0,
+      minSize: 20000,
+      enforceSizeThreshold: 50000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
@@ -45,11 +51,10 @@ const config = {
     rules: [
       {
         test: /\.styl|css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'stylus-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader'],
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin({ filename: '[name].[hash].css' }), new webpack.ids.HashedModuleIdsPlugin()],
 };
 
 module.exports = merge(baseConfig, config);
