@@ -29,7 +29,3 @@ Will start webpack development server on ```localhost:3000``` with [hot module r
 # Environment variables
 
 - ```NODE_ENV``` - Either "development" or "production".
-
-# Live demo
-
-- [Demo](https://throwawayer.github.io/life/) - link to the demo.
